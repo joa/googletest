@@ -942,7 +942,7 @@ using ::std::tuple_size;
 #endif
 
 // _LIBCPP_VERSION is defined by the libc++ library from the LLVM project.
-#if defined(__GLIBCXX__) || defined(_LIBCPP_VERSION)
+#if !defined(__EMSCRIPTEN__) && (defined(__GLIBCXX__) || defined(_LIBCPP_VERSION))
 # define GTEST_HAS_CXXABI_H_ 1
 #else
 # define GTEST_HAS_CXXABI_H_ 0
